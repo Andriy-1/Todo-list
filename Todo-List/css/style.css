@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Asar:regular);
+@import url(https://fonts.googleapis.com/css?family=Sen:regular,700,800);
 
 * {
   padding: 0px;
@@ -39,7 +39,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "Asar";
+  font-family: "Sen";
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -48,7 +48,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Asar";
+  font-family: "Sen";
 }
 
 input::-ms-clear {
@@ -246,10 +246,11 @@ body._lock {
           flex: 1 0 auto;
   padding-left: 10px;
   font-size: 18px;
+  font-family: "Sen";
   background-color: inherit;
-  border-top: 2px solid rgba(49, 138, 53, 0.6);
-  border-bottom: 2px solid rgba(49, 138, 53, 0.6);
-  border-left: 2px solid rgba(49, 138, 53, 0.6);
+  border-top: 2px solid #5abb6a;
+  border-bottom: 2px solid #5abb6a;
+  border-left: 2px solid #5abb6a;
 }
 
 .form__input:focus {
@@ -260,28 +261,18 @@ body._lock {
 
 .form__btn {
   padding: 14px 20px 14px 20px;
-  background-color: rgba(49, 138, 53, 0.7);
+  background-color: #5abb6a;
   font-size: 18px;
   border-radius: 0px 22px 22px 0px;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  font-family: "Asar";
+  font-family: "Sen";
   letter-spacing: 1.3px;
 }
 
 .form__btn:hover {
   background-color: rgba(49, 138, 53, 0.9);
-}
-
-.page {
-  width: 1000px;
-  margin: 0px auto 30px auto;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  background-color: #b9ccc1;
-  border-radius: 30px;
 }
 
 .head {
@@ -295,6 +286,14 @@ body._lock {
 }
 
 .page {
+  width: 1000px;
+  margin: 0px auto 30px auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background-color: #b9ccc1;
+  border-radius: 30px 30px 30px 30px;
+  overflow: auto;
   position: relative;
 }
 
@@ -310,9 +309,9 @@ body._lock {
 
 .page__add {
   display: inline-block;
-  width: 70px;
-  height: 70px;
-  background-color: rgba(49, 138, 53, 0.9);
+  width: 60px;
+  height: 60px;
+  background-color: #5abb6a;
   border-radius: 50%;
   position: relative;
   -webkit-transition: all 0.3s ease 0s;
@@ -343,7 +342,7 @@ body._lock {
   display: block;
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 15%;
   width: 45px;
   height: 3px;
   border-radius: 50%;
@@ -358,7 +357,7 @@ body._lock {
   display: block;
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 14%;
   width: 45px;
   height: 3px;
   border-radius: 50%;
@@ -372,25 +371,34 @@ body._lock {
 }
 
 .todo {
-  padding-top: 20px;
+  font-family: "Sen";
+  -webkit-box-shadow: 2px 2px 15px #eee;
+          box-shadow: 2px 2px 15px #eee;
+}
+
+.todo :last-child {
+  border-bottom: none;
 }
 
 .todo__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #458550;
+  background-color: #5abb6a;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   height: 50px;
   border-bottom: 2px solid #333;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
-.todo__item.checked {
+.todo__item._checked {
   background-color: darkgrey;
-  opacity: 0.5;
+  opacity: 0.76;
 }
 
 .todo__item._active {
@@ -398,8 +406,72 @@ body._lock {
           animation: opacity 600ms ease-in-out;
 }
 
-.todo__input {
-  margin: 0px 0px 0px 20px;
+.todo__input-style-checkbox {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
+  -webkit-box-shadow: 2px 2px 15px #eee;
+          box-shadow: 2px 2px 15px #eee;
+}
+
+.todo__input-style-checkbox:hover::before {
+  content: "";
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: url(../img/icons/check.svg) no-repeat;
+}
+
+.todo__input-style-checkbox._checked::before {
+  content: "";
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: url(../img/icons/check.svg) no-repeat;
+}
+
+.todo__input-style-checkbox._checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #5abb6a;
+  -webkit-box-shadow: 0px 0px 10px #5abb6a;
+          box-shadow: 0px 0px 10px #5abb6a;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .todo__description {
@@ -408,6 +480,11 @@ body._lock {
           flex: 1 0 auto;
   margin: 0px 0px 0px 25px;
   font-size: 18px;
+  font-family: "Sen";
+}
+
+.todo__description._active {
+  text-decoration: line-through;
 }
 
 .todo__btn {
@@ -415,14 +492,26 @@ body._lock {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   padding: 5px;
-  background-color: rgba(129, 138, 49, 0.7);
+  background-color: #5abb6a;
   font-size: 14px;
   transition: all 0.3s ease 0s;
-  font-family: "Asar";
+  font-family: "Sen";
   letter-spacing: 1.2px;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 14px 0px 0px;
+  border-radius: 10%;
 }
 
 .todo__btn:hover {
   background-color: rgba(172, 52, 31, 0.9);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-perspective: 400;
+          perspective: 400;
+  -webkit-perspective-origin: center;
+          perspective-origin: center;
+  -webkit-transform: translate3d(-1px, 1px, 0px);
+          transform: translate3d(-1px, 1px, 0px);
+  -webkit-box-shadow: 2px 2px 12px 0 rgba(155, 55, 38, 0.9), 2px 2px 15px 0 rgba(167, 75, 58, 0.9);
+          box-shadow: 2px 2px 12px 0 rgba(155, 55, 38, 0.9), 2px 2px 15px 0 rgba(167, 75, 58, 0.9);
 }

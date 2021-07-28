@@ -120,12 +120,12 @@ function Task(discription) {
 
 const createTemplate = (task, index) => {
 	return `
-	<div class="todo__item ${task.complited ? 'checked' : ''}">
-	<input onclick="compliteTask(${index})" type="checkbox"${task.complited ? 'checked' : ''} class="todo__input">
-	<div class="todo__description">
-		${task.discription}
+	<div class="todo__item ${task.complited ? '_checked' : ''}">
+	<span onclick="compliteTask(${index})"  class="todo__input-style-checkbox ${task.complited ? '_checked' : ''}"></span>
+	<div class="todo__description ${task.complited ? '_active' : ''}">
+	${task.discription}	
 	</div>
-	<button onclick="deliteTask(${index})" class="todo__btn">Удалить</button>
+	<button onclick="deliteTask(${index})" class="todo__btn">Delete</button>
 </div>
 	`
 };
@@ -133,7 +133,7 @@ const createTemplate = (task, index) => {
 const fileterTask = () => {
 	const activeTasks = tasks.length && tasks.filter(item => item.complited == false);
 	const complitedTasks = tasks.length && tasks.filter(item => item.complited == true);
-	tasks = [...activeTasks,...complitedTasks];
+	tasks = [...activeTasks, ...complitedTasks];
 
 }
 
