@@ -275,6 +275,72 @@ body._lock {
   background-color: rgba(49, 138, 53, 0.9);
 }
 
+.date {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80px;
+  border-radius: 12px 0px 5px 12px;
+  background-color: #5abb6a;
+  -webkit-box-shadow: -2px 2px 2px 2px rgba(90, 187, 106, 0.6);
+          box-shadow: -2px 2px 2px 2px rgba(90, 187, 106, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 25px;
+}
+
+.date__day {
+  padding: 5px;
+  text-shadow: 2px 1px 2px pink;
+}
+
+.date__day::after {
+  position: relative;
+  left: 6px;
+  content: "";
+  padding: 27px 1px 25px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.date__number-day {
+  padding: 0px 5px 0px 0px;
+  text-shadow: 2px 1px 2px pink;
+}
+
+.date__number-day::after {
+  position: relative;
+  left: 6px;
+  content: "";
+  padding: 27px 1px 25px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.date__year {
+  padding: 0px 5px 0px 0px;
+  text-shadow: 2px 1px 2px pink;
+}
+
+.date__year::after {
+  position: relative;
+  left: 6px;
+  content: "";
+  padding: 27px 2px 25px 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.time {
+  text-shadow: 2px 1px 2px pink;
+  padding: 5px;
+  margin: 0px 0px 0px 0px;
+}
+
 .head {
   margin: 30px auto;
 }
