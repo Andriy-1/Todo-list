@@ -116,6 +116,7 @@ function updateTime() {
 	const hourEL = document.querySelector('.time__hours');
 	const minutesEL = document.querySelector('.time__minutes');
 	const secondEL = document.querySelector('.time__second');
+	let d = new Date();
 	let hours = d.getHours()
 	let minutes = d.getMinutes();
 	let seconds = d.getSeconds();
