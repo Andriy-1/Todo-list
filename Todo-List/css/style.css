@@ -309,29 +309,16 @@ body._lock {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.date__number-day {
+.date__all {
   padding: 0px 5px 0px 0px;
   text-shadow: 2px 1px 2px pink;
 }
 
-.date__number-day::after {
+.date__all::after {
   position: relative;
   left: 6px;
   content: "";
   padding: 27px 1px 25px 0;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.date__year {
-  padding: 0px 5px 0px 0px;
-  text-shadow: 2px 1px 2px pink;
-}
-
-.date__year::after {
-  position: relative;
-  left: 6px;
-  content: "";
-  padding: 27px 2px 25px 1px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
