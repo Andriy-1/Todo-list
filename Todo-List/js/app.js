@@ -106,40 +106,54 @@ document.addEventListener('keydown', function (e) {
 
 // day - починається з  0 - Sunday , 6 - Saturday
 // month - починається з  0 - January , 11 - December
-const date = document.querySelector('.date');
-const masiveDate = {};
-let newDate = new Date;
-const dateAll = (date = new Date) => {
-	masiveDate.day = date.getDay();
-	masiveDate.numberDay = date.getDate();
-	masiveDate.month = date.getMonth();
-	masiveDate.year = date.getFullYear();
-	masiveDate.timeHours = date.getHours();
-	masiveDate.timeMinutes = date.getMinutes();
-	// masiveDate.timeSeconds = date.getSeconds();
-};
-dateAll();
- let currentDay;
- if(masiveDate.day === 0) {currentDay ='Sunday'} 
-else if (masiveDate.day === 1) {currentDay ='Monday'} 
- else if (masiveDate.day === 2) {currentDay ='Tuesday'}
- else if (masiveDate.day === 3) {currentDay ='Wednesday' }
- else if (masiveDate.day === 4) {currentDay ='Thursday'}
- else if (masiveDate.day === 5) {currentDay ='Friday' }
- else if(masiveDate.day === 6) {currentDay ='Saturday'};
- 
+window.onload = function () {
+	setInterval(updateTime, 1000);
+}
 
+let d = new Date();
+//time
+function updateTime() {
+	const hourEL = document.querySelector('.time__hours');
+	const minutesEL = document.querySelector('.time__minutes');
+	const secondEL = document.querySelector('.time__second');
+	let hours = d.getHours()
+	let minutes = d.getMinutes();
+	let seconds = d.getSeconds();
 
-date.innerHTML = `<div>
-		<span class="date__day">${currentDay}</span>
-		<span class="date__number-day">${masiveDate.numberDay>10? masiveDate.numberDay :'0'+masiveDate.numberDay}</span>
-		<span class="date__year">${masiveDate.year}</span>
-	</div>
-	<div class="date__time time">
-		<span class="time__hours">${masiveDate.timeHours>10? masiveDate.timeHours :'0'+masiveDate.timeHours}</span> :
-		<span class="time__minutes">${masiveDate.timeMinutes>10? masiveDate.timeMinutes :'0'+masiveDate.timeMinutes}</span>
-	</div>` ;
+	if (hours >= 0 && hours <= 9) hours = "0" + hours;
+	if (minutes >= 0 && minutes <= 9) minutes = "0" + minutes;
+	if (seconds >= 0 && seconds <= 9) seconds = "0" + seconds;
 
+	hourEL.innerHTML = hours;
+	minutesEL.innerHTML = minutes;
+	secondEL.innerHTML = seconds;
+}
+// date
+const dateEL = document.querySelector('.date__all');
+let date = d.getDate();
+let month = d.getMonth();
+let year = d.getFullYear();
+
+if (date >= 0 && date <= 9) date = "0" + date;
+if (month >= 0 && month <= 9) month = "0" + month;
+if (year >= 0 && year <= 9) year = "0" + year;
+dateEL.innerHTML = `${date}/${month}/${year}`;
+
+// day 
+const dayEL = document.querySelector('.date__day');
+let dayNumber = d.getDate(), day = "";
+
+switch (dayNumber) {
+	case 0: day = 'Sunday'; break;
+	case 1: day = 'Monday'; break;
+	case 2: day = 'Tuesday'; break;
+	case 3: day = 'Wednesday'; break;
+	case 4: day = 'Thursday'; break;
+	case 5: day = 'Friday'; break;
+	case 6: day = 'Saturday'; break;
+}
+dayEL.innerHTML = day;
+//============================================================
 const input = document.getElementById('input');
 const btn = document.getElementById('btn');
 const taskBox = document.querySelector('.todo');
