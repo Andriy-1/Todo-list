@@ -206,7 +206,7 @@ body._lock {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   background-color: rgba(254, 254, 254, 0.8);
-  padding: 50px;
+  padding: calc(17px + 33 * ((100vw - 320px) / 1600));
   width: 100%;
   max-width: 700px;
   border-radius: 20px 0px 20px 20px;
@@ -244,7 +244,6 @@ body._lock {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  padding-left: 10px;
   font-size: 18px;
   font-family: "Sen";
   background-color: inherit;
@@ -280,7 +279,7 @@ body._lock {
   top: 0;
   right: 0;
   width: auto;
-  height: 80px;
+  height: calc(27px + 53 * ((100vw - 320px) / 1600));
   border-radius: 12px 0px 5px 12px;
   background-color: #5abb6a;
   -webkit-box-shadow: -2px 2px 2px 2px rgba(90, 187, 106, 0.6);
@@ -293,33 +292,31 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 25px;
+  font-size: calc(12px + 13 * ((100vw - 320px) / 1600));
 }
 
 .date__day {
-  padding: 5px;
+  padding: 0px 0px 0px 5px;
   text-shadow: 2px 1px 2px pink;
 }
 
 .date__day::after {
   position: relative;
-  left: 6px;
-  content: "";
-  padding: 27px 1px 25px 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  left: 4px;
+  content: "|";
 }
 
 .date__all {
-  padding: 0px 5px 0px 0px;
+  padding: 0px 5px 0px 5px;
   text-shadow: 2px 1px 2px pink;
+  display: inline-block;
+  height: 100%;
 }
 
 .date__all::after {
   position: relative;
-  left: 6px;
-  content: "";
-  padding: 27px 1px 25px 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  left: 4px;
+  content: "|";
 }
 
 .time {
@@ -329,7 +326,10 @@ body._lock {
 }
 
 .head {
-  margin: 30px auto;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: calc(7px + 23 * ((100vw - 320px) / 1600));
 }
 
 .head__title {
@@ -339,8 +339,11 @@ body._lock {
 }
 
 .page {
-  max-width: 1000px;
-  margin: 0px auto 30px auto;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  margin-top: calc(0px + 15 * ((100vw - 320px) / 1600));
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -427,6 +430,7 @@ body._lock {
   font-family: "Sen";
   -webkit-box-shadow: 2px 2px 15px #eee;
           box-shadow: 2px 2px 15px #eee;
+  overflow: hidden;
 }
 
 .todo :last-child {
@@ -442,7 +446,7 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 50px;
+  padding: 15px 0px 15px 0px;
   border-bottom: 2px solid #333;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -464,18 +468,18 @@ body._lock {
   display: inline-block;
   position: relative;
   left: 15px;
-  width: 20px;
-  height: 20px;
+  padding: 10px;
   border-radius: 50%;
   border: 1px solid black;
   -webkit-box-shadow: 2px 2px 15px #eee;
           box-shadow: 2px 2px 15px #eee;
+  margin: 0px 15px 0px 0px;
 }
 
 .todo__input-style-checkbox:hover::before {
   content: "";
   position: absolute;
-  top: 53%;
+  top: 56%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -492,7 +496,7 @@ body._lock {
 .todo__input-style-checkbox._checked::before {
   content: "";
   position: absolute;
-  top: 53%;
+  top: 56%;
   left: 50%;
   z-index: 2;
   -webkit-transform: translate(-50%, -50%);
@@ -529,9 +533,10 @@ body._lock {
 
 .todo__description {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  margin: 0px 0px 0px 25px;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0px 10px 0px 25px;
+  word-wrap: break-word;
   font-size: 18px;
   font-family: "Sen";
 }

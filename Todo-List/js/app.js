@@ -1,4 +1,4 @@
-function body_lock_add(delay) {
+ function body_lock_add(delay) {
 	let body = document.querySelector("body");
 	
 }
@@ -142,7 +142,8 @@ dateEL.innerHTML = `${date}/${month}/${year}`;
 
 // day 
 const dayEL = document.querySelector('.date__day');
-let dayNumber = d.getDate(), day = "";
+let dayNumber = d.getDay(), day = "";
+
 
 switch (dayNumber) {
 	case 0: day = 'Sunday'; break;
